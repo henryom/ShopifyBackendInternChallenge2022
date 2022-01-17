@@ -1,6 +1,6 @@
 # ShopifyBackendInternChallenge2022
 
-Hello, my name is Henry O'Scannlain-Miller.  This is my submission for the Shopify Backend Developer Intern Challenge.  
+Hello, my name is Henry O'Scannlain-Miller.  This is my submission for the Shopify Backend Developer Intern Challenge.  For my extra feature, I have developed an export to CSV functionality.
 
 
 To run my application, first start the server, then run the front end.
