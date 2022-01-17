@@ -1,5 +1,10 @@
 const express = require('express')
+
 const app = express()
+const cors = require("cors")
+
+// middleware
+app.use(cors())
 app.use(express.json())
 const port = 3000
 /*
@@ -12,6 +17,8 @@ const port = 3000
 // store inventory
 var inventory = {};
 
+// TODO: add load from file functionality
+
 // get all items
 app.get('/inventory', (req, res) => {
     res.send(Object.values(inventory))
@@ -23,7 +30,7 @@ app.get('/inventory', (req, res) => {
 // 3 must have a quantity >= 0
 app.post('/inventory', (req, res) => {
     const { sku, name, quantity } = req.body;
-    
+    // quantity_int = parseInt(quantity)
     // 1
     if (sku in inventory){
         res.status(400)
@@ -57,7 +64,7 @@ app.post('/inventory', (req, res) => {
 // 1 must be a value SKU to delete
 app.delete('/inventory', (req, res) => {
     const { sku } = req.body
-    
+
     // 1
     if (!(sku in inventory)) {
         res.status(400)
@@ -124,7 +131,7 @@ app.put('/inventory/name', (req, res) => {
     res.send('Success')
 })
 
-
+// TODO: add save to file functionality
 
 app.listen(port, () => {
     console.log(`Server Started on port localhost:${port}`)
