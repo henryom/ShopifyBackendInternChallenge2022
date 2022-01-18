@@ -59,7 +59,6 @@ const InventoryTable = () => {
         }
     }
 
-
     const saveToCSV = () => {
         // this line creates the data inside the csv file
         // the constant includes filetype, charset and a header row
@@ -98,8 +97,12 @@ const InventoryTable = () => {
                 <tbody>
                     {inventory.map(item => (
                         <tr key={item.sku}>
-                            <td>{item.sku}</td>
-                            <td>{item.name}</td>
+                            <td>
+                                {item.sku}
+                            </td>
+                            <td>
+                                {item.name}
+                            </td>
                             <td>
                                 <button onClick={() => modifyQuantity(item.sku, item.quantity - 1)}>-</button>
                                 {item.quantity}
